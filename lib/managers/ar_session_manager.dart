@@ -119,8 +119,8 @@ class ARSessionManager {
   }
 
   /// Returns a future ImageProvider that contains a screenshot of the current AR Scene
-  Future<ImageProvider> snapshot() async {
+  snapshot() async {
     final result = await _channel.invokeMethod<Uint8List>('snapshot');
-    return MemoryImage(result!);
+    return MemoryImage(result!) as Uint8List;
   }
 }
